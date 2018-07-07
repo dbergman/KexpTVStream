@@ -16,9 +16,16 @@ class TestUtilities {
         if let fPath = filePath {
             if let pathUrl = URL(string: "file://\(fPath)") {
                 let content = try! Data(contentsOf: pathUrl)
-                    let json = JSON(data: content)
+
+                do {
+                    let json = try JSON(data: content)
                     
                     return json
+                } catch  let error as NSError  {
+                    print("Error with config JSON Paring: \(error)")
+                    
+                    return nil
+                }
             }
         }
         

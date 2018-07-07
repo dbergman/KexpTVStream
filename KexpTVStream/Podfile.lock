@@ -1,10 +1,10 @@
 PODS:
-  - Alamofire (4.3.0)
-  - AlamofireImage (3.2.0):
-    - Alamofire (~> 4.1)
-  - Flurry-iOS-SDK/FlurryTVOS (8.0.2)
+  - Alamofire (4.7.2)
+  - AlamofireImage (3.3.1):
+    - Alamofire (~> 4.5)
+  - Flurry-iOS-SDK/FlurryTVOS (9.0.0)
   - HockeySDK-tvOS (4.1.0-beta.1)
-  - SwiftyJSON (3.1.4)
+  - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -18,12 +18,12 @@ EXTERNAL SOURCES:
     :podspec: https://download.hockeyapp.net/preseason/sdk/tvos/HockeySDK-tvOS.podspec
 
 SPEC CHECKSUMS:
-  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
-  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
-  Flurry-iOS-SDK: 6d47c244428d2cab3f25c97bdba9b2f4d4a5935f
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
+  Flurry-iOS-SDK: 58e48e417fee667154e4d240040b270b3734d28a
   HockeySDK-tvOS: ee43955ab5eb2d72fc3faca460364a20c4e38f97
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 5ac02adbb89413696289f5c78060532d1704dae4
+PODFILE CHECKSUM: 2fff741e3e124434939f8bbeafc521a6eb13870e
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1

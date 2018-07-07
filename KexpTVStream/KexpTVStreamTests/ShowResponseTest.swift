@@ -30,7 +30,7 @@ class ShowResponseTest: XCTestCase {
         XCTAssertTrue(aShow?.showId == 87492)
         XCTAssertTrue(aShow?.programId == 4)
         XCTAssertTrue(aShow?.showName == "Roadhouse")
-        XCTAssertTrue((aShow?.showDescription?.characters.count)! > 10)
+        XCTAssertTrue((aShow?.showDescription?.count)! > 10)
         XCTAssertTrue(aShow?.airdate != nil)
         XCTAssertTrue(aShow?.tagline == "")
     }

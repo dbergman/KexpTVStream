@@ -49,9 +49,13 @@ class KexpController {
             configurationSetup(configSetting)
             return
         }
-
-        let configJSON = JSON(data: kexpConfigData)
-        let configSetting = ConfigSettings(configJSON)
-        configurationSetup(configSetting)
+        
+        do {
+            let configJSON = try JSON(data: kexpConfigData)
+            let configSetting = ConfigSettings(configJSON)
+            configurationSetup(configSetting)
+        } catch  let error as NSError  {
+            print("Error with config JSON Paring: \(error)")
+        }
     }
 }

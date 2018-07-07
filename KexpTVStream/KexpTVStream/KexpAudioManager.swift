@@ -123,14 +123,14 @@ class KexpAudioManager: NSObject {
         remoteCommandCenter.pauseCommand.addTarget(self, action: #selector(KexpAudioManager.pauseEvent))
     }
     
-    func pauseEvent() {
+    @objc func pauseEvent() {
         delegate?.kexpAudioPlayerDidStopPlaying(false, backUpStream: false)
         pause()
     }
     
     // MARK: - NSNotification
     // This is called when audio is taken from another app. Sending a HardStop when an AVAudioSessionInterruptionType is fired
-    func handleInterruption(_ notification: Notification) {
+    @objc func handleInterruption(_ notification: Notification) {
         guard let interruptionTypeUInt = (notification as NSNotification).userInfo?[AVAudioSessionInterruptionTypeKey] as? UInt else { return }
 
         if let interruptionType = AVAudioSessionInterruptionType(rawValue: interruptionTypeUInt) {
@@ -147,26 +147,26 @@ class KexpAudioManager: NSObject {
         let albumName = song.releaseName ?? ""
         
         let trackItem = AVMutableMetadataItem()
-        trackItem.identifier = AVMetadataCommonIdentifierTitle
+        trackItem.identifier = AVMetadataIdentifier.commonIdentifierTitle
         trackItem.locale = NSLocale.current
         trackItem.value = trackName as NSString
-        trackItem.keySpace = AVMetadataKeySpaceCommon
+        trackItem.keySpace = AVMetadataKeySpace.common
         
         let albumNameItem = AVMutableMetadataItem()
-        albumNameItem.identifier = AVMetadataCommonIdentifierAlbumName
+        albumNameItem.identifier = AVMetadataIdentifier.commonIdentifierAlbumName
         albumNameItem.locale = NSLocale.current
         albumNameItem.value = albumName as NSString
-        albumNameItem.keySpace = AVMetadataKeySpaceCommon
+        albumNameItem.keySpace = AVMetadataKeySpace.common
         
         let artistNameItem = AVMutableMetadataItem()
-        artistNameItem.identifier = AVMetadataCommonIdentifierArtist
+        artistNameItem.identifier = AVMetadataIdentifier.commonIdentifierArtist
         artistNameItem.locale = NSLocale.current
         artistNameItem.value = artistName as NSString
-        artistNameItem.keySpace = AVMetadataKeySpaceCommon
+        artistNameItem.keySpace = AVMetadataKeySpace.common
         
         let artworkMetadataItem = AVMutableMetadataItem()
         artworkMetadataItem.locale = Locale.current
-        artworkMetadataItem.identifier = AVMetadataCommonIdentifierArtwork
+        artworkMetadataItem.identifier = AVMetadataIdentifier.commonIdentifierArtwork
         
         if let albumArtUrl = song.largeImageUrl {
             let urlRequest = URLRequest(url: albumArtUrl)

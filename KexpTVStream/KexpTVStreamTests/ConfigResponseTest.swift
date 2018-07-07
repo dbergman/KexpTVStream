@@ -21,7 +21,7 @@ class ConfigResponseTest: XCTestCase {
         XCTAssert(configSettings.backupStreamUrl == "http://live-mp3-128.kexp.org:8000/listen.pls", "Back up Kexp Stream URL not present")
         
         if let nowPlayingLogo = configSettings.nowPlayingLogo {
-            XCTAssert(nowPlayingLogo.characters.count > 0, "Now playing logo is not present")
+            XCTAssert(nowPlayingLogo.count > 0, "Now playing logo is not present")
         }
         else {
             XCTAssertNotNil(configSettings.nowPlayingLogo)

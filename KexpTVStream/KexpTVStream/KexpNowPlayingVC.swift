@@ -85,7 +85,7 @@ class KexpNowPlayingVC: UIViewController {
     }
 
     // MARK: - Networking methods
-    func getNowPlayingInfo() {
+    @objc func getNowPlayingInfo() {
         KexpController.getSong({ [weak self] song -> Void in
             guard let strongSelf = self else { return }
             guard let song = song else { return }

@@ -61,7 +61,7 @@ class PlayResponseTest: XCTestCase {
         XCTAssertNotNil(comment)
         
         XCTAssertTrue(comment?.commentid == 949045)
-        XCTAssertTrue((comment?.commentText?.characters.count)! > 0)
+        XCTAssertTrue((comment?.commentText?.count)! > 0)
     }
     
     func testAirBreakInPayload() {
